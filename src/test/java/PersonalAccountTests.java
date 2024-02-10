@@ -39,7 +39,8 @@ public class PersonalAccountTests {
     @DisplayName("Переход по клику на «Личный кабинет»")
     @Description("Проверяем переход в личный кабинет")
     public void checkGoToPersonalAccount() {
-        new ConstructorPage().clickPersonalAccountButton();
+        new ConstructorPage().clickPersonalAccountButton()
+                .shouldBeDisplayed();
     }
 
     @Test
@@ -47,6 +48,7 @@ public class PersonalAccountTests {
     @Description("Проверяем переход по клику на конструктор")
     public void checkGoToConstructor() {
         new ConstructorPage().clickPersonalAccountButton()
+                .shouldBeDisplayed()
                 .clickConstructorButton();
     }
 
@@ -55,6 +57,7 @@ public class PersonalAccountTests {
     @Description("Проверяем переход по клику на логотип")
     public void checkGoToLogoStellarBurgers() {
         new ConstructorPage().clickPersonalAccountButton()
+                .shouldBeDisplayed()
                 .clickStellarBurgersLogo();
     }
 

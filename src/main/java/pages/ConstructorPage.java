@@ -8,6 +8,7 @@ import static com.codeborne.selenide.Selenide.$x;
 
 public class ConstructorPage extends BasePage<ConstructorPage> {
     private SelenideElement buttonSignInAccount = $x(".//button[contains(@class, 'button_type_primary')]");
+    private SelenideElement pageTitle = $x(".//h1");
 
     @Step("Кликнуть на кнопку {tabName}")
     public ConstructorPage clickIngredientTab(String tabName) {
@@ -27,6 +28,7 @@ public class ConstructorPage extends BasePage<ConstructorPage> {
     @Step("Проверить отображение главной страницы")
     public ConstructorPage shouldBeDisplayed() {
         buttonSignInAccount.shouldBe(visible);
+        pageTitle.shouldBe(visible).shouldHave(text("Соберите бургер"));
         return this;
     }
 }
